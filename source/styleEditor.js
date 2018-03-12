@@ -1,8 +1,9 @@
 $(document).ready(function(){
-  $("input").on(
-    "submit",
-    {"selector": input.selector},
-    {"property": input.property},
-    {"value": input.value},
-  )
+  $("#style_editor").click(function(event){
+    let selector = document.getElementsByName("selector")[0].value
+    let property = document.getElementsByName("property")[0].value
+    let value = document.getElementsByName("value")[0].value
+    event.preventDefault();
+    $(`${selector}`).css(property, value)
+  })
 });
